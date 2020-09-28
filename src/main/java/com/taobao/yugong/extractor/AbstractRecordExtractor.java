@@ -1,8 +1,5 @@
 package com.taobao.yugong.extractor;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,15 +16,27 @@ public abstract class AbstractRecordExtractor extends AbstractYuGongLifeCycle im
 
     protected final Logger           logger = LoggerFactory.getLogger(this.getClass());
 
-    @Getter
-    @Setter
     protected volatile ExtractStatus status = ExtractStatus.NORMAL;
 
     public ExtractStatus status() {
         return status;
     }
 
-    @Getter
-    @Setter
     protected volatile ProgressTracer tracer;
+
+	public ExtractStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ExtractStatus status) {
+		this.status = status;
+	}
+
+	public ProgressTracer getTracer() {
+		return tracer;
+	}
+
+	public void setTracer(ProgressTracer tracer) {
+		this.tracer = tracer;
+	}
 }

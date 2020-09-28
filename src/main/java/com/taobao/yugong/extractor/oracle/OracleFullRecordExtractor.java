@@ -4,8 +4,6 @@ import java.text.MessageFormat;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import lombok.Getter;
-
 import org.apache.commons.lang.StringUtils;
 
 import com.google.common.collect.Lists;
@@ -36,10 +34,10 @@ public class OracleFullRecordExtractor extends AbstractOracleRecordExtractor {
     private static final String         MIN_PK_FORMAT   = "select min({0}) from {1}.{2}";
     private YuGongContext               context;
     private LinkedBlockingQueue<Record> queue;
-    @Getter
+   
     private String                      extractSql;
     private Thread                      extractorThread = null;
-    @Getter
+    
     private String                      getMinPkSql;
 
     public OracleFullRecordExtractor(YuGongContext context){
@@ -146,4 +144,12 @@ public class OracleFullRecordExtractor extends AbstractOracleRecordExtractor {
         // }
         this.extractSql = extractSql;
     }
+
+	public String getExtractSql() {
+		return extractSql;
+	}
+
+	public String getGetMinPkSql() {
+		return getMinPkSql;
+	}
 }

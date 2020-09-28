@@ -2,8 +2,6 @@ package com.taobao.yugong.extractor.sqlserver;
 
 import java.util.List;
 
-import lombok.Setter;
-
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.taobao.yugong.common.lifecycle.AbstractYuGongLifeCycle;
@@ -16,7 +14,6 @@ import com.taobao.yugong.extractor.AbstractRecordExtractor;
 public class SqlServerFullRecordExtractor extends AbstractRecordExtractor {
 
     private final YuGongContext context;
-    @Setter
     private String              extractSql;
 
     public SqlServerFullRecordExtractor(YuGongContext context){
